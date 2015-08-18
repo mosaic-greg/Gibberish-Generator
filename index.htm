@@ -3,17 +3,17 @@
 <html>
 <body>
 <script>
-var firstSym = ["d", "f", "m", "b", "w"];
-var firstPick = firstSym[Math.floor(Math.random()*firstSym.length)];
-
-var secoSym = ["a", "o", "i", "y"];
-var secoPick = secoSym[Math.floor(Math.random()*secoSym.length)];
-
+function gibberish(){
+  var firstSym = ["d", "f", "m", "b", "w"];
+  var firstPick = firstSym[Math.floor(Math.random()*firstSym.length)];
+  
+  var secoSym = ["a", "o", "i", "y"];
+  var secoPick = secoSym[Math.floor(Math.random()*secoSym.length)];
+return firstPick + secoPick + " "
+};
 //call the function several times to generate different gibberish words! 
-confirm(firstPick + secoPick)
 
-
-
+confirm(gibberish() + gibberish() + gibberish() + gibberish() + gibberish() + gibberish())
 
 
 
