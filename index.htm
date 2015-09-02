@@ -1,31 +1,52 @@
-# Gibberish-Generator: refresh page for more gibberish! 
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Gibberish Generator</title>
+  <script>
+    function gibberish(){
+      var firstSym = ["d", "f", "m", "b", "w"];
+      var firstPick = firstSym[Math.floor(Math.random()*firstSym.length)];
+
+      var secondSym = ["a", "oa", "i", "ay"];
+      var secondPick = secondSym[Math.floor(Math.random()*secondSym.length)];
+
+      return firstPick + secondPick + " ";
+    }
+
+    function printGibberish(times) {
+      var i;
+      var output = "";
+
+      // ensure var times is a number
+      if (isNaN(times)) {
+        return false;
+      }
+
+      for (i = 0; i < times; i++){
+        output += gibberish();
+      }
+      return output;
+    }
+
+
+    function init() {
+      var gibberishBox = document.getElementById("gibberishBox");
+
+      //call the function several times to generate different gibberish words!
+      gibberishBox.innerHTML = printGibberish(6);
+    }
+
+    window.onload = init;
+
+
+  </script>
+</head>
 <body>
-<script>
-function gibberish(){
-  var firstSym = ["d", "f", "m", "b", "w"];
-  var firstPick = firstSym[Math.floor(Math.random()*firstSym.length)];
-  
-  var secoSym = ["a", "oa", "i", "ay"];
-  var secoPick = secoSym[Math.floor(Math.random()*secoSym.length)];
-return firstPick + secoPick + " "
-};
-//call the function several times to generate different gibberish words! 
 
-confirm(gibberish() + gibberish() + gibberish() + gibberish() + gibberish() + gibberish())
+  <h1>Gibberish-Generator: </h1>
+  <h2>refresh page for more gibberish!</h2>
 
+  <div id="gibberishBox"></div>
 
-
-
-
-//confirm(firstPick);
-
-
-
-
-
-
-</script>
 </body>
 </html>
